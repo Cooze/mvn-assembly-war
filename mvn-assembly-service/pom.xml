@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mvn-assembly-war</artifactId>
+        <groupId>org.cooze.mvn.assembly.war</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.cooze.mvn.assembly.war.mvn-assembly-service</groupId>
+    <artifactId>mvn-assembly-service</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.cooze.mvn.assembly.war.mvn-assembly-model</groupId>
+            <artifactId>mvn-assembly-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.cooze.mvn.assembly.war.mvn-assembly-common</groupId>
+            <artifactId>mvn-assembly-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
