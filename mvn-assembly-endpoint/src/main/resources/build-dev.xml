@@ -1,0 +1,33 @@
+<assembly>
+    <formats>
+        <format>war</format>
+        <format>dir</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <outputDirectory>WEB-INF/lib</outputDirectory>
+            <directoryMode>755</directoryMode>
+            <fileMode>755</fileMode>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.outputDirectory}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+            <excludes>
+                <exclude>assembly.xml</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/${profiles.dir}/${env}</directory>
+            <outputDirectory>WEB-INF/classes</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/webapp</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
