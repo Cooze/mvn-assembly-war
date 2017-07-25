@@ -1,4 +1,5 @@
 <assembly>
+    <id>${profiles.active}</id>
     <formats>
         <format>war</format>
         <format>dir</format>
@@ -9,19 +10,6 @@
             <useProjectArtifact>true</useProjectArtifact>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <outputDirectory>WEB-INF/lib</outputDirectory>
-            <!--移除不需要的依赖包-->
-            <!--
-            <excludes>
-                <exclude>org.cooze.mvn.assembly.war.mvn-assembly-endpoint:mvn-assembly-endpoint:jar</exclude>
-                <exclude>*:war</exclude>
-            </excludes>
-            -->
-            <includes>
-                <!--添加需要的依赖包-->
-                <include>org.cooze.mvn.assembly.war.mvn-assembly-common:mvn-assembly-common:jar</include>
-                <include>org.cooze.mvn.assembly.war.mvn-assembly-service:mvn-assembly-service:jar</include>
-                <include>org.cooze.mvn.assembly.war.mvn-assembly-model:mvn-assembly-model:jar</include>
-            </includes>
             <directoryMode>755</directoryMode>
             <fileMode>755</fileMode>
         </dependencySet>
@@ -31,7 +19,9 @@
             <directory>${project.build.outputDirectory}</directory>
             <outputDirectory>WEB-INF/classes</outputDirectory>
             <excludes>
-                <exclude>assembly.xml</exclude>
+                <exclude>build-dev.xml</exclude>
+                <exclude>application-prod.yml</exclude>
+                <exclude>application-test.yml</exclude>
             </excludes>
         </fileSet>
         <fileSet>
